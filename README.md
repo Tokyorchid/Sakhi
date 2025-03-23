@@ -43,4 +43,4 @@ Languages Supported
 - Tamil  
 - (More coming soon...)
 
-Built with care by Team Sakhi
+Built with love by DevOops <3
