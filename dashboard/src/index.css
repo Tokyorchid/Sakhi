@@ -1,0 +1,122 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 33% 18%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 33% 18%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 33% 18%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 252 59% 82%;
+    --primary-foreground: 222 33% 18%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 32% 30%;
+    --input: 217 32% 30%;
+    --ring: 252 59% 82%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 217 33% 17%;
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222 33% 18%;
+    --sidebar-accent: 217 33% 22%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 32% 30%;
+    --sidebar-ring: 217 32% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-bold;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Calendar custom styles */
+.rdp-day_selected:not([disabled]) { 
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+.rdp-day_selected:hover:not([disabled]) { 
+  background-color: hsl(var(--primary)) !important;
+  opacity: 0.8;
+}
+
+/* Sakhi specific styles */
+.pill-tag {
+  @apply bg-secondary/60 backdrop-blur-sm text-sm py-1 px-3 rounded-full inline-flex items-center;
+}
+
+.glass-card {
+  @apply bg-secondary/30 backdrop-blur-sm border border-border/50 rounded-xl;
+}
+
+/* Sakhi bold text styles */
+.text-bold {
+  @apply font-bold;
+}
+
+.card-gradient {
+  @apply bg-gradient-to-br from-secondary/90 to-secondary/60 backdrop-blur-sm;
+}
+
+.sakhi-card {
+  @apply border-none shadow-lg rounded-xl overflow-hidden bg-secondary/80 backdrop-blur-md;
+}
+
+.sakhi-highlight {
+  @apply text-primary font-bold;
+}
+
+.sakhi-button {
+  @apply bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary/90 transition-all;
+}
+
+.sakhi-sidebar-item {
+  @apply flex items-center space-x-3 px-6 py-4 font-medium transition-all;
+}
+
+.sakhi-sidebar-item.active {
+  @apply bg-primary/20 text-primary border-l-4 border-primary;
+}
+
+.sakhi-stats-card {
+  @apply bg-secondary/80 backdrop-blur-sm border-none shadow-lg rounded-xl overflow-hidden;
+}
